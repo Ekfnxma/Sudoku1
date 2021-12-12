@@ -58,7 +58,7 @@ program SUDOKUclase1
   do while (x<=3) 
   x=x+1
 
-  print *, "Introduce los valores de las incógnitas a, b, c, d, e. Tienes 3 intentos en total."
+  print *, "Introduce los valores de las incognitas a, b, c, d, e. Tienes 3 intentos en total."
 
   read *, a,b,c,d,e
 
@@ -72,7 +72,7 @@ program SUDOKUclase1
   end if
   if (a==p .and. b==j .and. c==m .and. d==l .and. e==h) exit
   if (x>3) then
-   write(*,*)'Solución:'
+   write(*,*)'Solucion:'
    write(*,"(4i3)") matriz
    write(*,*) 'a=', p
    write(*,*) 'b=',j
