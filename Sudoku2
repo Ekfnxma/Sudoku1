@@ -37,7 +37,7 @@ program SUDOKUclase2
        &      2,         3,          int(p),          1,      &
        & int(j),         1,               3,     int(m),      &
        &      1,         4,               2,          3,      &
-       & int(l),         2,          int(h),        4/),    &
+       & int(l),         2,          int(h),        4/),      &
        & shape=(/4,4/),&
        & order=(/1,2/))
       F1=matriz(1,1)+matriz(1,2)+matriz(1,3)+matriz(1,4)
@@ -58,18 +58,20 @@ program SUDOKUclase2
     do while (x<=3) 
     x=x+1
 
-    print *, "Introduce los valores de las incógnitas a, b, c, d, e. Tienes 3 intentos."
+    print *, "Introduce los valores de las incognitas a, b, c, d, e. Tienes 3 intentos."
     read *, a,b,c,d,e
 
     if (a/=p .or. b/=j .or. c/=m .or. d/=l .or. e/=h) then
-      print *, "Respuesta incorrecta."
+      if (x<=3) then
+      print *, "Respuesta incorrecta, tienes un intento menos."
       write(*,*)
+      end if 
     else
       print *, "Respuesta correcta, ¡enhorabuena!"
     end if
     if (a==p .and. b==j .and. c==m .and. d==l .and. e==h) exit
     if (x>3) then
-     write(*,*)'Solución:'
+     write(*,*)'Solucion:'
      write(*,"(4i3)") matriz
      write(*,*) 'a=', p
      write(*,*) 'b=',j
